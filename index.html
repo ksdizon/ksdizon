@@ -8,9 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>ksdizon</title>
+
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body class="">
-    <main class="h-screen w-screen flex flex-col items-center pt-32 gap-3">
+    <main class="h-screen w-screen flex flex-col items-center pt-32 gap-3 opacity-0 animate-fadeIn transition-opacity duration-1000">
         <header class="h-auto w-[900px] flex items-center py-4 gap-14 border-b">
             <img src="src/images/ksdizon.jpg" class="w-64 h-64 rounded-full object-cover">
 
@@ -31,5 +38,13 @@
             </ul>
         </section>
     </main>
+
+    <script>
+        window.onload = () => {
+            const mainContent = document.querySelector('main');
+            mainContent.classList.remove('opacity-0');
+            mainContent.classList.add('opacity-100');
+        };
+    </script>
 </body>
 </html>
